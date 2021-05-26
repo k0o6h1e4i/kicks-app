@@ -1,0 +1,41 @@
+<section class="hero is-info" >
+  <div class="hero-body">
+    <div class="container">
+      <strong class="is-size-1" style="font-family: arial black;">Users</strong>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-multiline">
+      <% @users.each do |user| %>
+        <div class="column is-3">
+          <div class="card">
+            <div class="card-content">
+              <div class="card-image">
+                <figure class="image is-1by1">
+                  <%= link_to user_path(user) do %>
+                    <% if user.image.attached? %>
+                      <%= image_tag user.images , class: "user-image" %>
+                    <% else %>
+                      <%= image_tag 'no-image.png' %>
+                    <% end %>
+                  <% end %>
+                </figure>
+              </div>
+            </div>
+            <div class="card-content">
+              <div class="content">
+              <h4><%=link_to user.username, user_path(user) %></h4>
+              <br>
+              <i class="fa fa-clone "></i> 
+                 投稿数：<%= user.items.count %>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>

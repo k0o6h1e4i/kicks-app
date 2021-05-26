@@ -1,0 +1,173 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ @import "bulma";
+
+ .notification:not(:last-child){
+	margin-bottom: 0;
+}
+
+
+.user-image{
+ border-radius: 500px;
+}
+
+.top-image{
+  border-radius: 500px;
+  height: 40px;
+}
+
+
+.section1 {
+	background-repeat: no-repeat;
+	background-size: contain;
+	animation-name: drive;
+  -webkit-animation: drive 10s infinite;
+}
+
+@-webkit-keyframes drive {
+  0% { background-color: #e74c3c; }
+	10% { background-color: brown;}
+  20% { background-color: #f1c40f; }
+	30% { background-color: springgreen;}
+  40% { background-color: #1abc9c; }
+  50% { background-color: darkgreen;}
+  60% { background-color: #3498db; }
+	70% { background-color: lightsalmon;}
+  80% { background-color: #9b59b6; }
+	90% { background-color: fuchsia;}
+  100% { background-color: #e74c3c; }
+}
+
+.section2 {
+  background-color:slategray;
+  color: #fff;
+}
+.hidden{
+  display: none;
+}
+
+main {
+  font-family: arial black;
+  color: #fff;
+  max-width: 1000px;
+  width: 100%;
+  margin: 50px auto;
+}
+
+.contents li.show h2,
+.contents li.show p,
+main .contents li.show .home-image {
+  transform: none;
+  opacity: 1;
+}
+
+.contents li {
+  position: relative;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: 1s;
+}
+
+.contents li.show {
+  opacity: 1;
+  transform: none;
+}
+
+.contents li:not(:first-of-type) {
+  margin-top: 200px;
+}
+
+.contents li:nth-of-type(odd) .contentsText{
+  right: 0;
+}
+
+.contents li:nth-of-type(even) .contentsText{
+  align-items: flex-start;
+}
+
+.contents li:nth-of-type(odd) .home-image{
+  margin-right: auto;
+  transform: translate(-20px, 20px);
+}
+
+.contents li:nth-of-type(even) .home-image{
+  margin-left: auto;
+  transform: translate(20px, 20px);
+}
+
+.contentsText {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  position: absolute;
+  top: 40px;
+}
+
+.contents h2 {
+  font-size: 50px;
+  font-weight: bold;
+  white-space: nowrap;
+  background-color: rgba(20,20,20,8);
+  padding: 10px 20px;
+  line-height: 1.4;
+  letter-spacing: .05em;
+  border-radius: 5px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 1s;
+}
+
+.contents p {
+  line-height: 1.6;
+  background-color: #555;
+  font-size: 14px;
+  max-width: 340px;
+  padding: 15px;
+  margin-top: 30px;
+  border-radius: 5px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 1s;
+}
+
+.home-image {
+  width: 65%;
+  display: block;
+  border-radius: 5px;
+  opacity: 0;
+  transition: 1s .5s;
+}
+
+*, *::before, *::after{
+  box-sizing: border-box;
+}
+
+
+@keyframes titleAnimation {
+  0% {
+    letter-spacing: .3em;
+    opacity: 0;
+  }
+}
+
+strong  {
+  animation: titleAnimation 1.5s;
+}
+// background-image: image-url('furima-header01.png');
+  // background-size: cover;
+  // background-repeat: no-repeat;
+  // background-position: top center;

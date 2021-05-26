@@ -1,0 +1,51 @@
+<section class="hero is-info ">
+  <div class="hero-body">
+    <div class="container">
+      <strong class="is-size-1" style="font-family: arial black;">Items</strong>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-multiline">
+      <% @items.each do |item| %>
+        <div class="column is-3">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <%= link_to item_path(item) do %>
+                  <%= image_tag item.image %>
+                <% end %>
+              </figure>
+            </div>
+
+            <div class="card-content">          
+              <div class="content">
+              <i class="fa fa-user fa-1x "></i> 
+                  <%=link_to item.user.username, user_path(item.user) %>
+                  <br>
+              <i class="fa fa-clock-o "></i> 
+                <time><%= item.updated_at.strftime("%Y-%m-%d %H:%M") %></time>更新
+                <br>
+               <% if user_signed_in? %>
+               <% if current_user.already_favorited?(item) %>
+                  <%= link_to item_favorites_path(item), method: :delete do %>
+                    <i class="fas fa-heart"></i>
+                  <% end %>
+                  <%= item.favorites.count %>
+               <% else %>
+                  <%= link_to item_favorites_path(item), method: :post do %>
+                    <i class="far fa-heart"></i>
+                    <%= item.favorites.count %>
+                  <% end %>         
+               <% end %>
+               <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>
