@@ -121,7 +121,7 @@ main .contents li.show .home-image {
   font-size: 50px;
   font-weight: bold;
   white-space: nowrap;
-  background-color: rgba(20,20,20,8);
+  background-color: rgba($color:gray, $alpha: 0.4);
   padding: 10px 20px;
   line-height: 1.4;
   letter-spacing: .05em;
