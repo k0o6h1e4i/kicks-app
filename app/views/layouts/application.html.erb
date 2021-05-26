@@ -70,13 +70,13 @@
                 <%# <span id="current-list">選択されていません</span> %>
                 
                   
-        　<p class="control">
+        <p class="control">
              <% if current_user.image.attached? %>
               <%= image_tag current_user.image,  class:"top-image" %>
-        　  　<% else %>
-         　　　<%= image_tag 'no-image.png'%>
+        <% else %>
+         <%= image_tag 'no-image.png'%>
             <% end %>
-              　
+              
                <%= link_to current_user.username ,user_path(current_user), class: "button is-warning is-light"%>
                </p>
 

@@ -17,7 +17,7 @@
                 <figure class="image is-1by1">
                   <%= link_to user_path(user) do %>
                     <% if user.image.attached? %>
-                      <%= image_tag user.images , class: "user-image" %>
+                      <%= image_tag user.image , class: "user-image" %>
                     <% else %>
                       <%= image_tag 'no-image.png' %>
                     <% end %>
@@ -39,3 +39,4 @@
     </div>
   </div>
 </section>
+
