@@ -65,19 +65,16 @@
                 <%# <span id="current-list">選択されていません</span> %>
                 
                   
-        <p class="control">
+              <p class="control1">
              <% if current_user.image.attached? %>
               <%= image_tag current_user.image,  class:"top-image" %>
-        <% else %>
-         <%= image_tag 'no-image.png'%>
-            <% end %>
+               <% else %>
+               <%= image_tag 'no-image.png'%>
+               <% end %>
               
-               <%= link_to current_user.username ,user_path(current_user), class: "button is-warning is-light"%>
+               <%= link_to current_user.username ,user_path(current_user) %>
                </p>
 
-                <p class="control">
-                  <%= link_to "マイページ", user_path(current_user), class: "button is-warning is-light" %>
-                </p>
                 <p class="control">
                   <%= link_to "ユーザー一覧", users_path, class: " button is-warning is-light" %>
                 </p>
