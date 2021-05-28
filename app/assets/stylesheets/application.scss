@@ -35,10 +35,10 @@
 
 
 @-webkit-keyframes drive {
-  0% { background-color: lightyellow;}
-  20% { background-color: linen; }
-  40% { background-color: #1abc9c; }
-  60% { background-color: lightskyblue }
+  0% { background-color: gainsboro}
+  20% { background-color:lemonchiffon; }
+  40% { background-color: lightgrey}
+  60% { background-color: lightskyblue ;}
 	80% { background-color: lightsalmon;}
   100% { background-color:pink; }
 }
@@ -71,7 +71,7 @@ main {
   max-width: 1000px;
   width: 100%;
   margin: 50px auto;
-  background-color:khaki;
+  -webkit-animation: drive 10s infinite;
 }
 
 .contents li.show h2,
