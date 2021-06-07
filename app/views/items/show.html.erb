@@ -36,12 +36,12 @@
                     <i class="fas fa-heart"></i>
                   <% end %>
                   <%= @item.favorites.count %>
-                <% else %>
+              <% else %>
                   <%= link_to item_favorites_path(@item), method: :post do %>
                     <i class="far fa-heart"></i>
                   <% end %>
                   <%= @item.favorites.count %>
-                <% end %>
+              <% end %>
                 
               <% if @item.user.id == current_user.id %>
                 <%= link_to "編集画面へ", edit_item_path(@item), class: "button is-success" %>
